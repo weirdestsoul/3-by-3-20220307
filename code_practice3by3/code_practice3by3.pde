@@ -6,6 +6,9 @@ float ellipseX, ellipseY, ellipseXDiameter, ellipseYDiameter;
 float x, y, xDiameter, yDiameter;
 color black=#000000, white=#FFFFE1; //Night Mode, blue is 00
 Boolean rectON=false, ellipseON=false;
+PFont textFont;
+String C = "Click Me!";
+String D = "Or me!";
 //
 void setup() {
 fullScreen(); //displayWidth and displayHeight
@@ -50,6 +53,7 @@ x = ellipseRectCentre;
 y = ellipseRectYCentre;
 xDiameter = ellipseXDiameter;
 yDiameter = ellipseYDiameter;
+textFont = createFont("Comic Sans MS Bold",55);
 }//End setup
 //
 void draw () {
@@ -59,6 +63,12 @@ rect(buttonX2, buttonY2, buttonWidth2, buttonHeight2); //"Or me"
 if (rectON==true && ellipseON==false) rect(rectDisplayX, rectDisplayY, rectDisplayWidth, rectDisplayHeight); //Display Rectangle
 //rect(ellipseX, ellipseY, ellipseXDiameter, ellipseYDiameter); //Display Circle
 if (rectON==false && ellipseON==true) ellipse(x, y, xDiameter, yDiameter);
+textAlign(CENTER, CENTER);
+fill(black);
+textFont(textFont, 45);
+text(C, buttonX1, buttonY1, buttonWidth1, buttonHeight1);
+text(D,buttonX2, buttonY2, buttonWidth2, buttonHeight2);
+fill(white);
 }//End draw
 //
 void keyPressed() {
