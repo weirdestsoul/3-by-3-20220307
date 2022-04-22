@@ -29,7 +29,6 @@ appWidth=appHeight*0;
 appHeight=appHeight*0;
 }
 println("App Geometry is:", "\tApp Width:", appWidth, "\tApp Height:", appHeight);
-
 //Population
 buttonX1 = appWidth*1/4;
 buttonY1 = appHeight*3/4;
@@ -53,7 +52,7 @@ x = ellipseRectCentre;
 y = ellipseRectYCentre;
 xDiameter = ellipseXDiameter;
 yDiameter = ellipseYDiameter;
-textFont = createFont("Comic Sans MS Bold",55);
+textFont = createFont("Comic Sans MS Bold",70);
 }//End setup
 //
 void draw () {
@@ -65,7 +64,7 @@ if (rectON==true && ellipseON==false) rect(rectDisplayX, rectDisplayY, rectDispl
 if (rectON==false && ellipseON==true) ellipse(x, y, xDiameter, yDiameter);
 textAlign(CENTER, CENTER);
 fill(black);
-textFont(textFont, 45);
+textFont(textFont, 70);
 text(C, buttonX1, buttonY1, buttonWidth1, buttonHeight1);
 text(D,buttonX2, buttonY2, buttonWidth2, buttonHeight2);
 fill(white);
@@ -78,6 +77,6 @@ void keyPressed() {
 void mousePressed() {
 rectON=false;
 ellipseON=false;
-if(mouseX>=buttonX1 && mouseX<=buttonX1+buttonWidth1 && mouseY >=buttonY1 && mouseY<=buttonY1+buttonHeight1) rectON=true;
-if(mouseX>=buttonX2 && mouseX<=buttonX2+buttonWidth2 && mouseY >=buttonY2 && mouseY<=buttonY2+buttonHeight2)ellipseON=true;
+if(mouseX>=buttonX1 && mouseX<=buttonX1+buttonWidth1 && mouseY >=buttonY1 && mouseY<=buttonY1+buttonHeight1) {rectON=true;}
+if(mouseX>=buttonX2 && mouseX<=buttonX2+buttonWidth2 && mouseY >=buttonY2 && mouseY<=buttonY2+buttonHeight2) {ellipseON=true;}
 }//End mousePressed
